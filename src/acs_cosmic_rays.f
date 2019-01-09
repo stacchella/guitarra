@@ -22,8 +22,8 @@ c
       double precision intensity, rate, xx, yy, acs_area, sum
       real cr_matrix, cr_flux, cr_accum
       integer i, len, n, n_smooth, ncr, n_cr_levels
-      character file*(*)
-      character path_guitarra*(*)
+      character file*160
+      character path_guitarra*100
       parameter (len=1000)
       parameter(ncr = 21)
 c

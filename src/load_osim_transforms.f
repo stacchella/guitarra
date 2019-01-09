@@ -26,7 +26,8 @@ c
      *     xavg_dir, xavg_inv, yavg_dir ,yavg_inv 
 c
       integer sca, debug, choice, i, ii, j,nn
-      character geomaps*30
+      character geomaps*180
+      character path_guitarra*100
       dimension sca(10), geomaps(2)
 
       dimension xcorner(5), ycorner(5)
@@ -68,8 +69,10 @@ c     This is equivalent to 0.0648"/pix /1.00759
 c
 c     read coefficients
 c     
+      call getenv('GUITARRA_HOME', path_guitarra)
       choice = 1
-      open(1,file=geomaps(choice))
+      open(1,file=path_guitarra(1:len_trim(path_guitarra))
+     +     //'data/'//geomaps(choice))
       do i = 1, 10
 c     direct 
 c     (X_pix, Y_pix) -->  (X_osim, Y_osim)
