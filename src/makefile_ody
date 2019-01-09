@@ -1,0 +1,25 @@
+
+FC = gfortran
+libslatec = /n/sw/fasrcsw/apps/Comp/gcc/4.8.2-fasrc01/slatec/4.1-fasrc01/lib/libslatec.a
+libcfitsio = /n/sw/fasrcsw/apps/Comp/gcc/4.8.2-fasrc01/cfitsio/3360-fasrc03/lib/libcfitsio.a
+LIBS = $(libcfitsio) $(libslatec)
+
+FFLAGS = -O3 -g -pedantic -C -mcmodel=medium 
+
+AR  = ar
+RM  = rm -v
+
+# SOURCES = *.f
+
+# OBJECTS = ${SOURCES:.f=.o}
+
+OBJECTS := $(patsubst %.f,%.o,$(wildcard *.f))
+
+guitarra: $(OBJECTS) 
+	$(FC) $(FFLAGS) -o guitarra \
+	$(OBJECTS) $(LIBS)
+#
+.PHONY: clean
+clean:
+	$(RM) $(OBJECTS)
+

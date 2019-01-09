@@ -25,6 +25,9 @@ c
       character darkfile*180, flatfile*180, biasfile*180, file*180,
      *     gainfile*180, sigmafile*180, WellDepthFile*180,
      *     linearityfile*180, badpixelmask*180
+      character darkfile_r*180, biasfile_r*180, sigmafile_r*180,
+     *     gainfile_r*180, linearityfile_r*180, badpixelmask_r*180,
+     *     WellDepthFile_r*180
       character path_guitarra*100
 c
       parameter (nnn=2048,nz=30,max_order=7)
