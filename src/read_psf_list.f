@@ -6,7 +6,7 @@ c
       implicit none
 c
       integer i, nf, nfilters
-      character psf_file*180, temp_psf*80
+      character psf_file*180, temp_psf*120
       character path_guitarra*100
 c
       parameter (nfilters = 54)
